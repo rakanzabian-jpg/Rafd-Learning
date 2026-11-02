@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafd Learning</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rafd Learning: leadership and digital-skills programs for growing Saudi companies. HRDF-eligible.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;500;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single column that "flows" downstream: tributary lines in the hero merge into one river, sections follow its course */
+:root{
+  --bg:#EDF1EF; --surface:#FFFFFF; --ink:#0F2E33; --muted:#4D6266; --line:#C9D5D2;
+  --water:#1F6F78; --ochre:#B97A1E; --ochre-soft:#F3E3C6;
+  --display:"Readex Pro", "Segoe UI", system-ui, sans-serif;
+  --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1D20; --surface:#122A2E; --ink:#E4EEEC; --muted:#9DB3B4; --line:#24444A;
+  --water:#5FB7BF; --ochre:#E3A64B; --ochre-soft:#3A2E1A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1D20; --surface:#122A2E; --ink:#E4EEEC; --muted:#9DB3B4; --line:#24444A;
+  --water:#5FB7BF; --ochre:#E3A64B; --ochre-soft:#3A2E1A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+a{color:var(--water)}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+
+header.top{padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:10px;font-family:var(--display);font-weight:700;font-size:20px}
+.brand .ar{font-weight:500;color:var(--water);font-size:18px}
+nav{display:flex;gap:20px;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding-block:40px 64px}
+.hero>*{min-width:0}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,5vw,54px);font-weight:500}
+.hero h1 em{font-style:normal;color:var(--water)}
+.hero p.lede{margin-top:18px;color:var(--muted);max-width:52ch;font-size:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:15px;border:1px solid transparent;cursor:pointer;font-family:var(--body)}
+.btn.primary{background:var(--water);color:var(--bg)}
+.btn.ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.river{width:100%;height:auto}
+.river path{fill:none;stroke-linecap:round}
+.meaning{margin-top:8px;font-size:13px;color:var(--muted);text-align:center}
+
+section{padding-block:56px;border-top:1px solid var(--line)}
+section h2{font-size:clamp(26px,3.4vw,34px);font-weight:500;margin-bottom:10px}
+section .sub{color:var(--muted);max-width:60ch;margin-bottom:32px}
+
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.prog h3{font-size:21px;font-weight:500}
+.prog .for{font-size:14px;color:var(--water);font-weight:600}
+.prog .meta{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.prog .meta strong{color:var(--ink)}
+
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.res{min-width:0}
+.res .num{font-family:var(--display);font-size:40px;font-weight:300;color:var(--water);line-height:1}
+.res .what{margin-top:8px;font-weight:600}
+.res .who{font-size:14px;color:var(--muted);margin-top:4px}
+
+.how{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px}
+.how div{min-width:0}
+.how h3{font-size:18px;font-weight:500;margin-bottom:6px}
+.how p{color:var(--muted)}
+.hrdf{margin-top:32px;background:var(--ochre-soft);border-radius:8px;padding:18px 20px;font-size:15px}
+.hrdf strong{color:var(--ink)}
+
+.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:40px}
+.contact>*{min-width:0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+label.full{grid-column:1/-1}
+input,textarea,select{font:inherit;font-weight:400;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+form .btn{grid-column:1/-1;justify-self:start}
+.out{grid-column:1/-1;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;font-size:14px}
+.out pre{white-space:pre-wrap;word-break:break-word;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0}
+.out .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.inbox{font-family:ui-monospace,Menlo,Consolas,monospace;user-select:all}
+
+footer{padding-block:32px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .hero,.contact{grid-template-columns:1fr}
+  .programs,.results,.how{grid-template-columns:1fr}
+  form{grid-template-columns:1fr}
+  nav{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .river .flow{stroke-dasharray:6 10;animation:flow 6s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-160}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Rafd Learning <span class="ar" lang="ar">رفد للتدريب</span></div>
+    <nav><a href="#programs">Programs</a><a href="#results">Results</a><a href="#how">How we work</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Corporate training · Riyadh</div>
+      <h1>Your company is growing. <em>Your managers should be ready for it.</em></h1>
+      <p class="lede">Leadership and digital-skills programs for Saudi companies of 200 to 2,000 people, built around the shifts, KPIs and handovers your teams actually run. Delivered in Arabic and English. HRDF-eligible.</p>
+      <div class="cta"><a class="btn primary" href="#contact">Talk to us</a><a class="btn ghost" href="#programs">See programs</a></div>
+    </div>
+    <div>
+      <svg class="river" viewBox="0 0 400 300" role="img" aria-label="Three streams merging into one river">
+        <path d="M20 30 C120 40 150 120 210 160" stroke="var(--line)" stroke-width="10"/>
+        <path d="M30 150 C110 150 150 160 210 165" stroke="var(--line)" stroke-width="10"/>
+        <path d="M40 280 C120 260 150 200 210 170" stroke="var(--line)" stroke-width="10"/>
+        <path d="M210 165 C270 165 320 160 390 150" stroke="var(--water)" stroke-width="22"/>
+        <path class="flow" d="M20 30 C120 40 150 120 210 160" stroke="var(--water)" stroke-width="3"/>
+        <path class="flow" d="M30 150 C110 150 150 160 210 165" stroke="var(--water)" stroke-width="3"/>
+        <path class="flow" d="M40 280 C120 260 150 200 210 170" stroke="var(--water)" stroke-width="3"/>
+        <circle cx="210" cy="165" r="7" fill="var(--ochre)"/>
+      </svg>
+      <p class="meaning"><span lang="ar">رافد</span> (rāfid): a tributary that feeds a river. We feed capable people into growing companies.</p>
+    </div>
+  </div>
+
+  <section id="programs">
+    <h2>Three programs, one way of working</h2>
+    <p class="sub">Cohorts of 20–25. Short sessions that fit around shifts, with assignments people do in their own branch, site or team.</p>
+    <div class="programs">
+      <article class="prog">
+        <div class="for">For new supervisors and team leads</div>
+        <h3>Frontline Leaders</h3>
+        <p>Run a handover, hold a difficult conversation, build a fair schedule. The first-time manager's job, practiced on the job.</p>
+        <div class="meta"><span><strong>6 weeks</strong> · half-day weekly</span><span><strong>SAR 3,500</strong> / person</span></div>
+      </article>
+      <article class="prog">
+        <div class="for">For non-technical staff</div>
+        <h3>Digital Fluency</h3>
+        <p>Data basics, reading and building dashboards, and using AI tools safely at work. In Arabic, around shift times.</p>
+        <div class="meta"><span><strong>4 weeks</strong></span><span><strong>SAR 2,800</strong> / person</span></div>
+      </article>
+      <article class="prog">
+        <div class="for">For mid-level managers</div>
+        <h3>Manager Academy</h3>
+        <p>Coaching teams, managing managers and running the numbers, with 1:1 coaching alongside the cohort.</p>
+        <div class="meta"><span><strong>12 weeks</strong> · with coaching</span><span><strong>SAR 6,500</strong> / person</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="results">
+    <h2>What changed for our clients</h2>
+    <p class="sub">Measured by the client, a quarter after the program.</p>
+    <div class="results">
+      <div class="res"><div class="num">9 → 6 wks</div><div class="what">New-supervisor ramp-up</div><div class="who">Darb Logistics · 120 supervisors before two new distribution centers</div></div>
+      <div class="res"><div class="num">87%</div><div class="what">Completion across 200 staff</div><div class="who">Thamar Foods · Digital Fluency for plant and office teams</div></div>
+      <div class="res"><div class="num">−25%</div><div class="what">Escalations to HQ</div><div class="who">Ruwad Health Clinics · Manager Academy for 40 clinic managers</div></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How we work</h2>
+    <p class="sub">Most training fails because it is generic and nobody finishes it. We design around both problems.</p>
+    <div class="how">
+      <div><h3>Built on your real situations</h3><p>We sit with your teams first, then build sessions around your handovers, KPIs and escalations, not stock slides.</p></div>
+      <div><h3>Facilitators who have run operations</h3><p>Bilingual facilitators who have managed shifts, stores and clinics themselves.</p></div>
+      <div><h3>People actually finish</h3><p>Completion above 85%. E-learning libraries typically see 20–30%.</p></div>
+      <div><h3>Sized for growth</h3><p>Most clients start with one cohort ahead of an opening or reorganization, then expand.</p></div>
+    </div>
+    <p class="hrdf"><strong>HRDF:</strong> every program is eligible for HRDF support. We prepare the paperwork with you; approval is HRDF's decision.</p>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Tell us what's changing</h2>
+        <p class="sub" style="margin-top:10px">New sites, a wave of promotions, a new system? We reply within one working day, Sunday to Thursday.</p>
+        <p style="font-size:15px">Riyadh, Saudi Arabia<br><span class="inbox" id="inboxAddr">rakan.rafd.demo@gmail.com</span></p>
+      </div>
+      <form id="inq" novalidate>
+        <label>Name<input id="f-name" required autocomplete="name"></label>
+        <label>Company<input id="f-company" required autocomplete="organization"></label>
+        <label>Role<input id="f-role" autocomplete="organization-title"></label>
+        <label>Company size
+          <select id="f-size"><option value="">Select</option><option>Under 200 employees</option><option>200–500 employees</option><option>500–1,000 employees</option><option>~900 employees</option><option>1,000–2,000 employees</option><option>Over 2,000 employees</option></select>
+        </label>
+        <label class="full">What's changing, and what do you need?<textarea id="f-msg" required></textarea></label>
+        <button class="btn primary" type="submit">Send inquiry</button>
+        <div class="out" id="out" hidden>
+          <div>Send this to <span class="inbox" id="toAddr"></span>:</div>
+          <pre id="mail"></pre>
+          <div class="row"><button class="btn primary" type="button" id="copy">Copy email</button><a class="btn ghost" id="mailto" href="#">Open in mail app</a><span id="copied" style="font-size:13px;color:var(--muted)"></span></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Rafd Learning · Riyadh</span>
+    <span>Rafd Learning is a fictional company created for an aiXplain AgentHour demo.</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('inq'), out=document.getElementById('out');
+  var inbox=document.getElementById('inboxAddr').textContent.trim();
+  var v=function(id){return document.getElementById(id).value.trim()};
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!v('f-name')||!v('f-company')||!v('f-msg')){form.reportValidity&&form.reportValidity();return;}
+    var subject='New inquiry: '+v('f-company');
+    var body='Name: '+v('f-name')+'\nCompany: '+v('f-company')+'\nRole: '+(v('f-role')||'-')+'\nCompany size: '+(v('f-size')||'-')+'\nMessage: '+v('f-msg');
+    document.getElementById('toAddr').textContent=inbox;
+    document.getElementById('mail').textContent='Subject: '+subject+'\n\n'+body;
+    document.getElementById('mailto').href='mailto:'+inbox+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    out.hidden=false;
+  });
+  document.getElementById('copy').addEventListener('click',function(){
+    var t=document.getElementById('mail').textContent, s=document.getElementById('copied');
+    try{navigator.clipboard.writeText(t).then(function(){s.textContent='Copied';},function(){sel();});}catch(err){sel();}
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var g=getSelection();g.removeAllRanges();g.addRange(r);s.textContent='Selected. Press Ctrl/Cmd+C';}
+  });
+})();
+</script>
+</body>
+</html>
